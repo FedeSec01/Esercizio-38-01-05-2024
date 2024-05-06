@@ -1,0 +1,9 @@
+
+1. `0x00001141 <+8>: mov EAX,0x20`: Questa istruzione sposta il valore esadecimale `0x20` (32 in decimale) nel registro EAX. Questo registro viene spesso utilizzato per operazioni aritmetiche e come registro di accumulazione.
+2. `0x00001148 <+15>: mov EDX,0x38`: Questa istruzione sposta il valore esadecimale `0x38` (56 in decimale) nel registro EDX. Il registro EDX viene spesso utilizzato come registro ausiliario per operazioni aritmetiche.
+3. `0x00001155 <+28>: add EAX,EDX`: Questa istruzione aggiunge il contenuto del registro EDX (56) al contenuto del registro EAX (32) e il risultato viene salvato di nuovo nel registro EAX. Dopo questa istruzione, il valore di EAX sarà 88 (32 + 56).
+4. `0x00001157 <+30>: mov EBP,EAX`: Questa istruzione sposta il valore contenuto nel registro EAX (88) nel registro EBP. Il registro EBP (Base Pointer) è comunemente utilizzato come registro di base per l'accesso alle variabili locali e ai parametri delle funzioni.
+5. `0x0000115a <+33>: cmp EBP,0xa`: Questa istruzione confronta il valore nel registro EBP (88) con il valore esadecimale `0xa` (10 in decimale).
+6. `0x0000115e <+37>: jge 0x1176 <main+61>`: Questa istruzione è un salto condizionale. Se il confronto precedente ha dato esito positivo (cioè se il valore di EBP è maggiore o uguale a 10), salta all'indirizzo `0x1176`. Altrimenti, continua con l'istruzione successiva.
+7. `0x0000116a <+49>: mov eax,0x0`: Se il salto condizionale non è stato eseguito (cioè il valore di EBP è inferiore a 10), questa istruzione imposta il valore del registro EAX a `0`.
+8. `0x0000116f <+54>: call 0x1030 <printf@plt>`: Questa istruzione effettua una chiamata alla funzione printf. Printf è una funzione di libreria standard in C utilizzata per la formattazione e la stampa di output su stdout (solitamente lo schermo). La printf viene chiamata con il valore zero (se EBP è inferiore a 10) o con il valore contenuto nel registro EAX (se EBP è maggiore o uguale a 10). 
